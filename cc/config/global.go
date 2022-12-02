@@ -136,7 +136,7 @@ var (
 		"-nostdlibinc",
 
 		// Emit additional debug info for AutoFDO
-		"-fdebug-info-for-profiling",
+		//"-fdebug-info-for-profiling",
 	}
 
 	deviceGlobalCppflags = []string{
@@ -402,8 +402,8 @@ func init() {
 	// These are tied to the version of LLVM directly in external/llvm, so they might trail the host prebuilts
 	// being used for the rest of the build process.
 	pctx.SourcePathVariable("RSClangBase", "prebuilts/clang/host")
-	pctx.SourcePathVariable("RSClangVersion", "clang-3289846")
-	pctx.SourcePathVariable("RSReleaseVersion", "3.8")
+	pctx.SourcePathVariable("RSClangVersion", "clang-r450784d")
+	pctx.SourcePathVariable("RSReleaseVersion", "14.0.6")
 	pctx.StaticVariable("RSLLVMPrebuiltsPath", "${RSClangBase}/${HostPrebuiltTag}/${RSClangVersion}/bin")
 	pctx.StaticVariable("RSIncludePath", "${RSLLVMPrebuiltsPath}/../lib64/clang/${RSReleaseVersion}/include")
 
